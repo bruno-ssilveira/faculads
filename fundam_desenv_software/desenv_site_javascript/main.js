@@ -28,15 +28,47 @@ para2.addEventListener('click', () => {
 // Button manipulation
 const btn = document.querySelector('.btn')
 btn.style.background = 'blue';
-if(btn.style.background !== 'red') {
-	btn.addEventListener('mouseover', () => {
+btn.addEventListener('mouseover', () => {
+	if(btn.innerHTML !== 'quebrei') {
 		btn.style.background = 'green';
-	})
-	btn.addEventListener('mouseout', () => {
+	}
+});
+btn.addEventListener('mouseout', () => {
+	if(btn.innerHTML !== 'quebrei') {
 		btn.style.background = 'blue';
-	})
-};
+	}
+});
 btn.addEventListener('click', () => {
 	btn.style.background = 'red';
 	btn.innerHTML = 'quebrei';
+});
+
+// calculator
+const valor1 = document.querySelector('.valor1');
+const valor2 = document.querySelector('.valor2');
+const somar = document.querySelector('.somar');
+const subtrair = document.querySelector('.subtrair');
+const dividir = document.querySelector('.dividir');
+const multiplicar = document.querySelector('.multiplicar');
+const resultado = document.querySelector('.resultado');
+
+somar.addEventListener('click', () => {
+	resultado.innerHTML = 'resultado: '
+	const calculo = Number(valor1.value) + Number(valor2.value);
+	resultado.innerHTML += calculo;
+});
+subtrair.addEventListener('click', () => {
+	resultado.innerHTML = 'resultado: '
+	const calculo = Number(valor1.value) - Number(valor2.value);
+	resultado.innerHTML += calculo;
+});
+dividir.addEventListener('click', () => {
+	resultado.innerHTML = 'resultado: '
+	const calculo = Number(valor1.value) / Number(valor2.value);
+	resultado.innerHTML += calculo;
+});
+multiplicar.addEventListener('click', () => {
+	resultado.innerHTML = 'resultado: '
+	const calculo = Number(valor1.value) * Number(valor2.value);
+	resultado.innerHTML += calculo;
 });

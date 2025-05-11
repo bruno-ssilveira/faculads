@@ -123,3 +123,9 @@
     - Decisão
     - Protótipo
     - Teste de usabilidade
+
+## Prototipação no Figma
+
+- Criando layout de projeto
+- Manipulando fluxo
+- Melhorando nosso projeto

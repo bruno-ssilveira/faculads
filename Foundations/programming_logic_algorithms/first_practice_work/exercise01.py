@@ -1,8 +1,13 @@
 print("\nWelcome to Bruno Silveira's Store!")
 
 # Data input to installment and order value
-valorDoPedido = float(input("\nEntre com o valor do pedido: "))
-quantidadeParcelas = int(input("Entre com a quantidade de parcelas: "))
+quantidadeParcelas = 0
+while quantidadeParcelas < 1:
+    valorDoPedido = float(input("\nEntre com o valor do pedido: "))
+    quantidadeParcelas = float(input("Entre com a quantidade de parcelas: "))
+    if quantidadeParcelas < 1:
+        print("A quantidade mínima de parcelas é 1x")
+        
 
 # Applying the installment logic
 if quantidadeParcelas < 4:
@@ -20,6 +25,7 @@ else:
 valorDaParcela = (valorDoPedido * (1 + juros)) / quantidadeParcelas
 valorTotalParcelado = valorDaParcela * quantidadeParcelas
 
-print(f"\nParcelamento em {quantidadeParcelas}x com juros de {juros * 100:.0f}%:")
-print(f"Valor de cada parcela: R$ {valorDaParcela:.2f}")
+if quantidadeParcelas >= 4:
+    print(f"\nParcelamento em {quantidadeParcelas:.0f}x com juros de {juros * 100:.0f}%:")
+    print(f"Valor de cada parcela: R$ {valorDaParcela:.2f}")
 print(f"Valor total parcelado: R$ {valorTotalParcelado:.2f}")
